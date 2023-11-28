@@ -1,5 +1,6 @@
 import FriendsList from "./components/friendsList";
-
+import AddFriend from "./components/addFriend";
+import SplitForm from "./components/splitForm";
 const initialFriends = [
   {
     id: 118836,
@@ -25,6 +26,8 @@ export default function App() {
   return (
     <div className="app">
       <FriendsList friends={initialFriends} />
+      <AddFriend />
+      <SplitForm />
     </div>
   );
 }

@@ -6,6 +6,7 @@ export default function FriendsList({ friends }) {
       {friends.map((friend) => (
         <Friends friend={friend} />
       ))}
+      <button className="button">Add friend</button>
     </ul>
   );
 }
