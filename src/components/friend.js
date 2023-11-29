@@ -1,6 +1,9 @@
-export default function Friends({ friend }) {
+export default function Friends({ friend, onSelection, selectedFriend }) {
+  const isSelected = friend?.id === selectedFriend?.id;
+
+  // _________jsx_______________
   return (
-    <li key={friend.id}>
+    <li key={friend.id} className={isSelected ? "selected" : ""}>
       <img src={friend.image} alt={friend.name} />
       <h3>{friend.name}</h3>
       {friend.balance < 0 && (
@@ -18,7 +21,9 @@ export default function Friends({ friend }) {
           you owe {friend.name} ${friend.balance}
         </p>
       )}
-      <button className="button">Select</button>
+      <button className="button" onClick={() => onSelection(friend)}>
+        {!isSelected ? "Select" : "Close"}
+      </button>
     </li>
   );
 }
