@@ -33,6 +33,7 @@ export default function App() {
   // ____________handleEvent______________
   const hanldeAddFriendShown = () => {
     setIsShown((isAddShown) => !isAddShown);
+    setSelectedFriend(null);
   };
 
   const handleFriends = (friend) => {
